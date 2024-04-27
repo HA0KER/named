@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto CURL</title>
+</head>
+<body>
+
+  <script>
+    // Define the CURL command as a string
+    var curlCommand = `curl -X 'POST' \
+      'https://85.235.16.23/config/rest/ssh/v1/users' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "data": {
+        "comment": "*6\\"WeYJxzhiTQqA~=d\`OkObqj8y6%A.xM+=PG\\"Fs.EQhU\`%-O@0'\\'\\''\\'",
+        "password": "string",
+        "username": "fjyhf7k8yo1128h-e88gklh3g_mocdr3"
+      }
+    }'`;
+
+    // Execute the CURL command using fetch API
+    fetch('/execute_curl', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        command: curlCommand
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Response:', data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  </script>
+
+</body>
+</html>
+
